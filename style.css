@@ -12,18 +12,45 @@ body {
       color: #333;
     }
 
-    h1 {
+h1 {
       margin-bottom: 10px;
     }
 
-    p {
+
+h2 {
+  color: #004a99;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 0.2rem;
+}
+
+ul {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+    
+p {
       max-width: 600px;
       margin: 0 auto 30px;
       font-size: 18px;
       line-height: 1.6;
     }
 
-    .button, .policy-button {
+.button, .policy-button {
       display: inline-block;
       margin: 10px;
       padding: 12px 24px;
@@ -35,10 +62,18 @@ body {
       transition: background-color 0.3s ease;
     }
 
-    .button:hover, .policy-button:hover {
+.button:hover, .policy-button:hover {
       background-color: #005f99;
     }
 
-    .buttons {
+.buttons {
       margin-top: 20px;
+    }
+
+.flag {
+      width: 20px;
+      height: auto;
+      margin-right: 0.6rem;
+      border-radius: 3px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.2);
     }
