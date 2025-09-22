@@ -80,7 +80,7 @@ nav ul li a.active {
 
 .lang-switch-fixed button {
     border: 2px solid #5A2D82;
-    background: transparent;
+    background: #FFFFFF;
     color: #5A2D82;
     padding: 6px 12px;
     margin-left: 5px;
@@ -233,7 +233,7 @@ a[href^="mailto:"] {
 .app-buttons a img {
     height: 50px;           /* altezza più adatta per mobile */
     transition: transform 0.2s;
-    max-width: 100%;        /* non esce dai bordi del container */
+    max-width: 80%;        /* non esce dai bordi del container */
 }
 
 .app-buttons a img:hover {
