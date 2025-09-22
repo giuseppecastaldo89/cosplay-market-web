@@ -1,188 +1,96 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cosplay Market - Privacy & Terms</title>
-<link rel="stylesheet" href="style.css">
-<script>
-function switchLang(lang) {
-    document.querySelectorAll('.lang-section').forEach(sec => sec.classList.remove('active'));
-    document.getElementById(lang).classList.add('active');
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosplay Market - Mobile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- SWITCH LINGUA FISSO -->
+    <div class="lang-switch-fixed">
+        <button onclick="switchLang('it')">🇮🇹 IT</button>
+        <button onclick="switchLang('en')">🇬🇧 EN</button>
+    </div>
 
-<header class="cm-hero">
-  <h1 class="cm-title">Cosplay Market</h1>
-  <h4 class="cm-subtitle">Privacy & Terms</h4>
-</header>
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Il mio logo">
+    </div>
 
-<nav>
-    <a href="javascript:void(0)" onclick="switchLang('it')">🇮🇹 Italiano</a>
-    <a href="javascript:void(0)" onclick="switchLang('en')">🇬🇧 English</a>
-</nav>
+    <!-- NAVIGAZIONE -->
+    <nav>
+        <ul>
+            <li><a href="#" class="nav-link active" data-target="home">Home</a></li>
+            <li><a href="#" class="nav-link" data-target="privacy">Privacy e Policy</a></li>
+            <li><a href="#" class="nav-link" data-target="contatti">Contatti</a></li>
+        </ul>
+    </nav>
 
-<main>
+    <!-- CONTENUTO DINAMICO -->
+    <div class="content">
+        <!-- Qui viene caricata la pagina selezionata -->
+    </div>
 
-<!-- ITALIANO -->
-<div id="it" class="lang-section active">
+    <!-- SCRIPT -->
+    <script>
+        let currentLang = 'it';
+        const navLinks = document.querySelectorAll(".nav-link");
+        const contentDiv = document.querySelector(".content"); // dove caricare le pagine
+const langButtons = document.querySelectorAll('.lang-switch-fixed button');
 
-<section id="privacy-it">
-    <h2>Privacy Policy</h2>
-    <p><strong>Ultimo aggiornamento:</strong> 28/08/2025</p>
+                // Funzione per aggiornare il bottone attivo
+function updateLangButtons() {
+    langButtons.forEach(btn => btn.classList.remove('active'));
+    const btn = document.querySelector(`.lang-switch-fixed button[onclick="switchLang('${currentLang}')"]`);
+    if (btn) btn.classList.add('active');
+}
+        // Carica la prima pagina di default (home)
+        loadPage('home');
+        updateLangButtons(); // inizializza il bottone attivo
 
-    <h3>1. Titolare del trattamento</h3>
-    <p>Giuseppe Castaldo – Email: giuseppe.castaldo.1989@gmail.com – Città: Torino</p>
+        navLinks.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const page = link.dataset.target;
 
-    <h3>2. Dati raccolti</h3>
-    <ul>
-        <li><b>Forniti dall’utente:</b> nome, email, foto profilo, annunci, messaggi</li>
-        <li><b>Tecnici:</b> IP, device, sistema operativo, log uso</li>
-        <li><b>Interazioni:</b> preferiti, segnalazioni, prodotti caricati</li>
-    </ul>
+                // Aggiorna link attivo
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
 
-    <h3>3. Finalità</h3>
-    <ul>
-        <li>Gestione account, annunci e messaggi</li>
-        <li>Moderazione contenuti (NSFW & linguaggio offensivo)</li>
-        <li>Sicurezza e prevenzione abusi</li>
-        <li>Statistiche e miglioramento servizio</li>
-    </ul>
+                // Carica pagina selezionata
+                loadPage(page);
+            });
+        });
 
-    <h3>4. Base giuridica</h3>
-    <p>Art. 6.1.b GDPR (contratto), Art. 6.1.c GDPR (obblighi legali), Art. 6.1.f GDPR (legittimo interesse), Art. 6.1.a GDPR (consenso)</p>
+        function loadPage(page) {
+            fetch(`${page}.html`)
+                .then(res => res.text())
+                .then(html => {
+                    contentDiv.innerHTML = html;
+                    showLang(currentLang, page); // passiamo page
+                })
+                .catch(() => {
+                    contentDiv.innerHTML = "<p>Errore nel caricamento della pagina.</p>";
+                });
+        }
 
-    <h3>5. Conservazione</h3>
-    <p>Dati conservati per il tempo necessario al servizio o per obbligo di legge.</p>
+        function switchLang(lang) {
+            currentLang = lang;
+            const page = document.querySelector('.nav-link.active').dataset.target;
+            showLang(lang, page);
+            updateLangButtons(); // aggiorna classe active sul bottone
+        }
 
-    <h3>6. Condivisione</h3>
-    <p>Solo con fornitori tecnici o autorità su richiesta legale. Nessuna vendita dati.</p>
+        function showLang(lang, page) {
+            contentDiv.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            const target = contentDiv.querySelector(`#${page}-${lang}`);
+            if (target) target.classList.add('active');
+        }
 
-    <h3>7. Sicurezza</h3>
-    <p>Connessioni HTTPS, filtri NSFW, segnalazioni utenti, blocchi account.</p>
-
-    <h3>8. Diritti GDPR</h3>
-    <p>Accesso, rettifica, cancellazione, limitazione, portabilità, opposizione. Richieste a: [email].</p>
-
-    <h3>9. Minori</h3>
-    <p>Uso consentito dai 16 anni in su o con consenso genitori/tutori.</p>
-</section>
-
-<section id="termini-it">
-    <h2>Termini di Utilizzo</h2>
-    <p><strong>Ultimo aggiornamento:</strong> 28/08/2025</p>
-
-    <h3>1. Uso consentito</h3>
-    <ul>
-        <li>Minimo 16 anni</li>
-        <li>Info profilo veritiere</li>
-        <li>No condivisione credenziali</li>
-    </ul>
-
-    <h3>2. Contenuti vietati</h3>
-    <ul>
-        <li>Materiale sessualmente esplicito, violento, discriminatorio</li>
-        <li>Prodotti illegali o contraffatti</li>
-        <li>Offese, minacce, frodi</li>
-        <li>Aggirare filtri NSFW o moderazione</li>
-    </ul>
-
-    <h3>3. Segnalazioni</h3>
-    <p>Possibile segnalare utenti/prodotti. Account che violano regole sospesi o eliminati senza rimborso.</p>
-
-    <h3>4. Responsabilità</h3>
-    <p>Cosplay Market non garantisce veridicità annunci. Transazioni tra utenti, l’app non gestisce pagamenti.</p>
-
-    <h3>5. Proprietà intellettuale</h3>
-    <p>L’utente mantiene i diritti sui propri contenuti ma concede licenza d’uso per mostrarli in app. Logo, marchio e codice sono del gestore.</p>
-
-    <h3>6. Legge applicabile</h3>
-    <p>Legge italiana e UE (GDPR).</p>
-</section>
-
-</div>
-
-<!-- ENGLISH -->
-<div id="en" class="lang-section">
-
-<section id="privacy-en">
-    <h2>Privacy Policy</h2>
-    <p><strong>Last update:</strong> 28/08/2025</p>
-
-    <h3>1. Data Controller</h3>
-    <p>Giuseppe Castaldo – Email: giuseppe.castaldo.1989@gmail.com – Città: Torino</p>
-
-    <h3>2. Data Collected</h3>
-    <ul>
-        <li><b>Provided by user:</b> name, email, profile photo, listings, messages</li>
-        <li><b>Technical:</b> IP, device, OS, usage logs</li>
-        <li><b>Interactions:</b> favorites, reports, uploaded products</li>
-    </ul>
-
-    <h3>3. Purpose</h3>
-    <ul>
-        <li>Account, listings and messaging management</li>
-        <li>Content moderation (NSFW & offensive language)</li>
-        <li>Security and abuse prevention</li>
-        <li>Statistics and service improvement</li>
-    </ul>
-
-    <h3>4. Legal Basis</h3>
-    <p>GDPR Art. 6.1.b (contract), Art. 6.1.c (legal obligations), Art. 6.1.f (legitimate interest), Art. 6.1.a (consent)</p>
-
-    <h3>5. Retention</h3>
-    <p>Data kept as long as needed for service or by law.</p>
-
-    <h3>6. Sharing</h3>
-    <p>Only with technical providers or legal authorities. No data selling.</p>
-
-    <h3>7. Security</h3>
-    <p>HTTPS connections, NSFW filters, user reports, account blocks.</p>
-
-    <h3>8. GDPR Rights</h3>
-    <p>Access, rectify, delete, restrict, portability, object. Requests to: [email].</p>
-
-    <h3>9. Minors</h3>
-    <p>Use allowed from age 16+ or with parental consent.</p>
-</section>
-
-<section id="terms-en">
-    <h2>Terms of Use</h2>
-    <p><strong>Last update:</strong> [date]</p>
-
-    <h3>1. Allowed Use</h3>
-    <ul>
-        <li>Minimum age 16</li>
-        <li>Truthful profile info</li>
-        <li>No credential sharing</li>
-    </ul>
-
-    <h3>2. Prohibited Content</h3>
-    <ul>
-        <li>Sexually explicit, violent, discriminatory material</li>
-        <li>Illegal or counterfeit products</li>
-        <li>Offensive language, threats, fraud</li>
-        <li>Bypassing NSFW or moderation filters</li>
-    </ul>
-
-    <h3>3. Reports</h3>
-    <p>Users/products can be reported. Accounts violating rules may be suspended or removed without refund.</p>
-
-    <h3>4. Liability</h3>
-    <p>Cosplay Market does not guarantee listing accuracy. Transactions are between users, the app does not handle payments.</p>
-
-    <h3>5. Intellectual Property</h3>
-    <p>User keeps rights to their content but grants a license to display it in the app. Logo, brand and code belong to the operator.</p>
-
-    <h3>6. Governing Law</h3>
-    <p>Italian and EU law (GDPR).</p>
-</section>
-
-</div>
-
-</main>
-
+    </script>
 </body>
+
 </html>
