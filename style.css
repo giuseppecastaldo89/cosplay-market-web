@@ -17,7 +17,7 @@ body {
 }
 
 .logo img {
-    max-width: 60%;
+    max-width: 80%;
     height: auto;
     border-radius: 15px;
     transition: transform 0.3s;
@@ -107,7 +107,6 @@ nav ul li a.active {
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 60vh;
 }
 
@@ -211,4 +210,19 @@ a[href^="mailto:"] {
     section h3 {
         font-size: 1.1em;
     }
+}
+
+.app-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.app-buttons a img {
+    transition: transform 0.2s;
+}
+
+.app-buttons a img:hover {
+    transform: scale(1.05);
 }
