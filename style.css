@@ -5,6 +5,7 @@ body {
     background-color: #ffffff;
     color: #333;
     padding-top: 60px;
+    overflow-x: hidden;
     /* spazio per bottoni lingua fissi */
 }
 
@@ -103,11 +104,13 @@ nav ul li a.active {
 }
 
 /* CONTENUTO */
-.content {
+.content, main {
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
     min-height: 60vh;
+    max-width: 100%;
+    box-sizing: border-box; /* include padding e border nella larghezza */
 }
 
 .page {
@@ -151,6 +154,10 @@ p {
 
     .page {
         padding: 15px;
+    }
+    body, main {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -214,6 +221,8 @@ a[href^="mailto:"] {
 
 .app-buttons {
     margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     flex-wrap: wrap;        /* fa andare su più righe se lo spazio è stretto */
     gap: 15px;              /* spazio tra i bottoni */
