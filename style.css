@@ -145,19 +145,19 @@ p {
     }
 
     .logo img {
-        max-width: 80%;
+        max-width: 90%;
     }
 
     .content {
-        padding: 15px;
+        padding: 10px;
     }
 
     .page {
-        padding: 15px;
+        padding: 10px;
     }
     body, main {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 
@@ -221,8 +221,8 @@ a[href^="mailto:"] {
 
 .app-buttons {
     margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     display: flex;
     flex-wrap: wrap;        /* fa andare su più righe se lo spazio è stretto */
     gap: 15px;              /* spazio tra i bottoni */
