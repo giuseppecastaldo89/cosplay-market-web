@@ -17,7 +17,7 @@
 
     <!-- LOGO -->
     <div class="logo">
-        <img src="logo.png" alt="Il mio logo">
+        <img src="img/logo.png" alt="Il mio logo">
     </div>
 
     <!-- NAVIGAZIONE -->
@@ -39,14 +39,14 @@
         let currentLang = 'it';
         const navLinks = document.querySelectorAll(".nav-link");
         const contentDiv = document.querySelector(".content"); // dove caricare le pagine
-const langButtons = document.querySelectorAll('.lang-switch-fixed button');
+        const langButtons = document.querySelectorAll('.lang-switch-fixed button');
 
-                // Funzione per aggiornare il bottone attivo
-function updateLangButtons() {
-    langButtons.forEach(btn => btn.classList.remove('active'));
-    const btn = document.querySelector(`.lang-switch-fixed button[onclick="switchLang('${currentLang}')"]`);
-    if (btn) btn.classList.add('active');
-}
+        // Funzione per aggiornare il bottone attivo
+        function updateLangButtons() {
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            const btn = document.querySelector(`.lang-switch-fixed button[onclick="switchLang('${currentLang}')"]`);
+            if (btn) btn.classList.add('active');
+        }
         // Carica la prima pagina di default (home)
         loadPage('home');
         updateLangButtons(); // inizializza il bottone attivo
