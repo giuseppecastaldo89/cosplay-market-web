@@ -230,6 +230,10 @@ a[href^="mailto:"] {
     padding: 0 10px;        /* margine dai bordi dello schermo */
 }
 
+.app-buttons a {
+    flex: 1 1 auto; 
+}
+
 .app-buttons a img {
     height: 50px;           /* altezza più adatta per mobile */
     transition: transform 0.2s;
