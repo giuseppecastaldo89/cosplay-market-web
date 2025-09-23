@@ -133,6 +133,11 @@ h2 {
     color: #5A2D82;
 }
 
+h3 {
+    margin-top: 0;
+    color: #5A2D82;
+}
+
 p {
     line-height: 1.6;
 }
@@ -249,4 +254,48 @@ a[href^="mailto:"] {
     .app-buttons a img {
         height: 45px;
     }
+}
+
+#satispay-logo {
+    width: 70px;       /* larghezza uniforme */
+    object-fit: contain; /* mantiene le proporzioni senza distorcere */
+    margin-right: 8px; /* spazio tra icona e testo */
+    vertical-align: middle; /* allinea icona al centro del testo */
+}
+
+#paypal-logo {
+    width: 40px;       /* larghezza uniforme */
+    object-fit: contain; /* mantiene le proporzioni senza distorcere */
+    margin-right: 8px; /* spazio tra icona e testo */
+    vertical-align: middle; /* allinea icona al centro del testo */
+}
+
+#email-logo {
+    width: 40px;       /* larghezza uniforme */
+    object-fit: contain; /* mantiene le proporzioni senza distorcere */
+    margin-right: 8px; /* spazio tra icona e testo */
+    vertical-align: middle; /* allinea icona al centro del testo */
+}
+
+#instagram-logo {
+    width: 30px;       /* larghezza uniforme */
+    object-fit: contain; /* mantiene le proporzioni senza distorcere */
+    margin-right: 8px; /* spazio tra icona e testo */
+    margin-left: 4px;
+    vertical-align: middle; /* allinea icona al centro del testo */
+}
+
+#donate-it ul,
+#donate-en ul  {
+    list-style-type: none; /* toglie i pallini */
+    padding: 0;            /* rimuove l'indentazione */
+    margin: 0;             /* opzionale */
+}
+
+#donate-it li,
+#donate-en li  {
+    list-style-type: none; /* toglie i pallini */
+    padding: 0;            /* rimuove l'indentazione */
+    margin-bottom: 10px;   /* opzionale */
+    margin-left: 20px;
 }
