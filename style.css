@@ -273,7 +273,7 @@ a[href^="mailto:"] {
 #email-logo {
     width: 40px;       /* larghezza uniforme */
     object-fit: contain; /* mantiene le proporzioni senza distorcere */
-    margin-right: 8px; /* spazio tra icona e testo */
+    margin-right: 3px; /* spazio tra icona e testo */
     vertical-align: middle; /* allinea icona al centro del testo */
 }
 
