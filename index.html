@@ -92,7 +92,13 @@
 
         window.addEventListener("load", () => {
             const tab = window.location.hash.substring(1); // es: "privacy"
-            if (tab) loadPage(tab);
+            if (tab) {
+                loadPage(tab);
+                navLinks.forEach(l => {
+                    if (l.dataset.target === tab) l.classList.add("active");
+                    else l.classList.remove("active");
+                });
+            }
         });
 
     </script>
