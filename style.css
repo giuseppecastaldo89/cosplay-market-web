@@ -285,15 +285,15 @@ a[href^="mailto:"] {
     vertical-align: middle; /* allinea icona al centro del testo */
 }
 
-#donate-it ul,
-#donate-en ul  {
+#contacts-it ul,
+#contacts-en ul  {
     list-style-type: none; /* toglie i pallini */
     padding: 0;            /* rimuove l'indentazione */
     margin: 0;             /* opzionale */
 }
 
-#donate-it li,
-#donate-en li  {
+#contacts-it li,
+#contacts-en li  {
     list-style-type: none; /* toglie i pallini */
     padding: 0;            /* rimuove l'indentazione */
     margin-bottom: 10px;   /* opzionale */

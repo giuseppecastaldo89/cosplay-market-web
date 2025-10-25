@@ -23,9 +23,9 @@
     <!-- NAVIGAZIONE -->
     <nav>
         <ul>
-            <li><a href="#" class="nav-link active" data-target="home">Home</a></li>
-            <li><a href="#" class="nav-link" data-target="privacy">Privacy & Policy</a></li>
-            <li><a href="#" class="nav-link" data-target="donate">Contacts</a></li>
+            <li><a href="#" id="nav-home" class="nav-link active" data-target="home">Home</a></li>
+            <li><a href="#" id="nav-privacy" class="nav-link" data-target="privacy">Privacy e Policy</a></li>
+            <li><a href="#" id="nav-contacts" class="nav-link" data-target="contacts">Contatti</a></li>
         </ul>
     </nav>
 
@@ -36,6 +36,19 @@
 
     <!-- SCRIPT -->
     <script>
+        const translations = {
+            it: {
+                home: "Home",
+                privacy: "Privacy e Policy",
+                contacts: "Contatti",
+            },
+            en: {
+                home: "Home",
+                privacy: "Privacy & Policy",
+                contacts: "Contacts",
+            },
+        };
+
         let currentLang = 'it';
         const navLinks = document.querySelectorAll(".nav-link");
         const contentDiv = document.querySelector(".content"); // dove caricare le pagine
@@ -80,6 +93,11 @@
         function switchLang(lang) {
             currentLang = lang;
             const page = document.querySelector('.nav-link.active').dataset.target;
+
+            document.getElementById("nav-home").textContent = translations[lang].home;
+            document.getElementById("nav-privacy").textContent = translations[lang].privacy;
+            document.getElementById("nav-contacts").textContent = translations[lang].contacts;
+
             showLang(lang, page);
             updateLangButtons(); // aggiorna classe active sul bottone
         }
