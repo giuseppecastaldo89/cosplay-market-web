@@ -285,6 +285,14 @@ a[href^="mailto:"] {
     vertical-align: middle; /* allinea icona al centro del testo */
 }
 
+#tiktok-logo {
+    width: 30px;       /* larghezza uniforme */
+    object-fit: contain; /* mantiene le proporzioni senza distorcere */
+    margin-right: 8px; /* spazio tra icona e testo */
+    margin-left: 4px;
+    vertical-align: middle; /* allinea icona al centro del testo */
+}
+
 #contacts-it ul,
 #contacts-en ul  {
     list-style-type: none; /* toglie i pallini */
