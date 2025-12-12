@@ -18,7 +18,7 @@ body {
 }
 
 .logo img {
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
     border-radius: 15px;
     transition: transform 0.3s;
